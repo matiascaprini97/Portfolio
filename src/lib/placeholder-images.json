@@ -1,3 +1,28 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "portrait",
+      "description": "A professional portrait of a male developer.",
+      "imageUrl": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTkyNDQ1MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional portrait"
+    },
+    {
+      "id": "projectHousy",
+      "description": "An abstract image representing a freelance platform.",
+      "imageUrl": "https://images.unsplash.com/photo-1612736232022-691d6243202b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxmcmVlbGFuY2UlMjBwbGF0Zm9ybXxlbnwwfHx8fDE3NTkyNTQ3MDF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "freelance platform"
+    },
+    {
+      "id": "projectVideogames",
+      "description": "An abstract image related to video games.",
+      "imageUrl": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx2aWRlbyUyMGdhbWVzfGVufDB8fHx8MTc1OTIwMDY5N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "video games"
+    },
+    {
+      "id": "projectInnovatech",
+      "description": "An abstract image representing backend technology.",
+      "imageUrl": "https://images.unsplash.com/photo-1667984550707-bf0beecaa082?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzZXJ2ZXIlMjB0ZWNobm9sb2d5fGVufDB8fHx8MTc1OTIxNjkyMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "server technology"
+    }
+  ]
 }
