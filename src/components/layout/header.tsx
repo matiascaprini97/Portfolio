@@ -38,8 +38,8 @@ export default function Header() {
         </div>
         <div className="flex flex-1 items-center justify-end">
           <Button asChild className="hidden md:inline-flex" variant="outline">
-            <a href="/Matias_Caprini_CV.pdf" download>
-              Descargar CV
+            <a href="/docs/Resume's_Matias_Caprini 06_25.pdf" target="_blank" rel="noopener noreferrer">
+              Ver CV
             </a>
           </Button>
 
@@ -76,13 +76,13 @@ export default function Header() {
                   ))}
                 </div>
               </div>
-               <div className="pl-6">
-                 <Button asChild className="w-full">
-                    <a href="/Matias_Caprini_CV.pdf" download>
-                        Descargar CV
-                    </a>
-                 </Button>
-               </div>
+              <div className="pl-6">
+                <Button asChild className="w-full">
+                  <a href="/docs/Resume's_Matias_Caprini 06_25.pdf" target="_blank" rel="noopener noreferrer">
+                    Ver CV
+                  </a>
+                </Button>
+              </div>
             </SheetContent>
           </Sheet>
         </div>

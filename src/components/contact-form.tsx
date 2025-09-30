@@ -1,135 +1,38 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
-import { useEffect } from 'react';
-
-import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent } from "@/components/ui/card";
-import { submitContactForm } from "@/app/actions";
-import { useToast } from "@/hooks/use-toast";
-import { Loader2 } from "lucide-react";
-
-const formSchema = z.object({
-  name: z.string().min(2, {
-    message: "El nombre debe tener al menos 2 caracteres.",
-  }),
-  email: z.string().email({
-    message: "Por favor, introduce una dirección de correo válida.",
-  }),
-  message: z.string().min(10, {
-    message: "El mensaje debe tener al menos 10 caracteres.",
-  }),
-});
-
-function SubmitButton() {
-  const { pending } = useFormStatus();
-  return (
-    <Button type="submit" className="w-full" disabled={pending}>
-      {pending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-      Enviar Mensaje
-    </Button>
-  );
-}
+import { FaLinkedin, FaWhatsapp, FaEnvelope } from "react-icons/fa";
+;
 
 export default function ContactForm() {
-  const [state, formAction] = useFormState(submitContactForm, {
-    message: "",
-    error: null,
-  });
-  const { toast } = useToast();
-
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      message: "",
-    },
-  });
-
-  useEffect(() => {
-    if (state.message) {
-      if(state.error) {
-        toast({
-          title: "Error",
-          description: state.message,
-          variant: "destructive",
-        });
-      } else {
-        toast({
-          title: "¡Éxito!",
-          description: state.message,
-        });
-        form.reset();
-      }
-    }
-  }, [state, toast, form]);
-
   return (
-    <Card>
-      <CardContent className="p-6">
-        <Form {...form}>
-          <form action={formAction} className="space-y-6">
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Nombre</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Tu nombre" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Correo Electrónico</FormLabel>
-                  <FormControl>
-                    <Input placeholder="tu@email.com" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="message"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Mensaje</FormLabel>
-                  <FormControl>
-                    <Textarea
-                      placeholder="¿En qué puedo ayudarte?"
-                      className="min-h-[120px]"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <SubmitButton />
-          </form>
-        </Form>
-      </CardContent>
-    </Card>
+    <div className="flex lg:flex-col gap-4 items-center justify-center">
+      {/* LinkedIn */}
+      <a
+        href="https://www.linkedin.com/in/matias-caprini/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="p-3 rounded-full bg-foreground text-background hover:bg-primary hover:text-primary-foreground transition-colors"
+      >
+        <FaLinkedin className="h-6 w-6" />
+      </a>
+
+      {/* WhatsApp */}
+      <a
+        href="https://wa.me/541132892114"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="p-3 rounded-full bg-foreground text-background hover:bg-green-500 hover:text-white transition-colors"
+      >
+        <FaWhatsapp className="h-6 w-6" />
+      </a>
+
+      {/* Mail */}
+      <a
+        href="mailto:matiascaprini@gmail.com"
+        className="p-3 rounded-full bg-foreground text-background hover:bg-blue-500 hover:text-white transition-colors"
+      >
+        <FaEnvelope className="h-6 w-6" />
+      </a>
+    </div>
   );
 }

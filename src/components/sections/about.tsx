@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
+import image from '../../../docs/WhatsApp Image 2024-03-28 at 13.37.57.jpeg';
 
 export default function About() {
-  const portraitImage = PlaceHolderImages.find(p => p.id === 'portrait');
+  const portraitImage = image;
 
   return (
     <section id="about" className="py-24 sm:py-32">
@@ -12,11 +12,11 @@ export default function About() {
             {portraitImage && (
               <div className="relative h-[400px] w-[400px] overflow-hidden rounded-full shadow-2xl">
                 <Image
-                  src={portraitImage.imageUrl}
+                  src={portraitImage}
                   alt="Retrato de Matias Caprini"
                   fill
                   className="object-cover"
-                  data-ai-hint={portraitImage.imageHint}
+                  data-ai-hint={portraitImage}
                 />
               </div>
             )}
